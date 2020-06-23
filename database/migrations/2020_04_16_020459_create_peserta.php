@@ -19,6 +19,7 @@ class CreatePeserta extends Migration
             $table->string('jenis_kelamin');
             $table->string('no_hp');
             $table->string('alamat_peserta');
+            $table->integer('kegiatan_id');
             $table->timestamps();
         });
     }

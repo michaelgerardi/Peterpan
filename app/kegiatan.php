@@ -7,8 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class kegiatan extends Model
 {
     protected $table ='kegiatan';
-    protected $fillable=['nama_kegiatan','tempat_kegiatan','tanggal_kegiatan','jenis_kegiatan','jumlah_peserta'];
+    protected $fillable=['donatur_id','nama_kegiatan','tempat_kegiatan','tanggal_kegiatan','jenis_kegiatan','jumlah_peserta'];
     public function donatur(){
-        return $this->hasMany('App\donatur');
+        return $this->belongsTo('App\donatur');
+    }
+    
+    public function detail(){
+        return $this->hasMany(detail::class);
     }
 }

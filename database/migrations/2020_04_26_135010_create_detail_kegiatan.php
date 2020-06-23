@@ -15,10 +15,11 @@ class CreateDetailKegiatan extends Migration
     {
         Schema::create('detail_kegiatan', function (Blueprint $table) {
            $table->increments('id');
+           $table->string('kegiatan_id');
            $table->string('jenis_perolehan');
            $table->date('tanggal_perolehan');
-           $table->integer('nilai_ekuivalen');
-           $table->biginteger('jumlah_perolehan');
+           $table->integer('dana_ekuivalen');
+           $table->biginteger('dana_perolehan');
            $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class CreateGroupPeserta extends Migration
     {
         Schema::create('group_peserta', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_group_peserta');
+            $table->string('nama_group');
             $table->timestamps();
         });
     }

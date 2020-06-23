@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class peserta extends Model
 {
     protected $table='peserta';
-    protected $fillable=['nama_peserta','jenis_kelamin','no_hp','alamat_peserta','no_rek','alamat_donatur'];
+    protected $fillable=['nama_peserta','jenis_kelamin','no_hp','alamat_peserta','kegiatan_id'];
+
+    public function kegiatan(){
+        return $this->belongsTo('App\kegiatan');
+    }
+
+    public function group_peserta(){
+        return $this->belongsTo(group_peserta::class);
+    }
 }

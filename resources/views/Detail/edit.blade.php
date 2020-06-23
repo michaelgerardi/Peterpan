@@ -23,11 +23,11 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nilai Ekuivalen</label>
-                    <input name="nilai_ekuivalen"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Donatur" value="{{$data_detail->nilai_ekuivalen}}">
+                    <input name="dana_ekuivalen"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Donatur" value="{{$data_detail->dana_ekuivalen}}">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Jumlah Perolehan</label>
-                    <input name="jumlah_perolehan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Afiliasi" value="{{$data_detail->jumlah_perolehan}}">
+                    <input name="dana_perolehan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Afiliasi" value="{{$data_detail->dana_perolehan}}">
                  </div>
      <button type="submit" class="btn btn-primary">Submit</button>
     </form>

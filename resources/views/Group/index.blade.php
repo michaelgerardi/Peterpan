@@ -1,7 +1,10 @@
 @extends('layouts.layout')
-@section('judul','Data Group Peserta')
-
 @section('content')
+    <br>
+      <ul class="left">
+        <h1>Data Group Peserta</h1>
+      </ul>
+    <br>
 <div class="container">
   @if(session('sukses'))
       <div class="alert alert-success" role="alert">
@@ -10,15 +13,14 @@
   @endif
     <div class="row">
         <div class="col-6">
-              
-        </div>
-        <div class="col-6">
              <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
-            Tambah Data
-         </button>
+             <ul class="right">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Tambah Data
+             </button>
+             </ul>
         </div>
-        
+        <br>
         <table class="table">
           <tr>
                <th>ID Group</th>
@@ -31,7 +33,7 @@
                   <td>{{$group->id}}</td>
                   <td>{{$group->nama_group_peserta}}</td>
                   <td><a href="/editgroup/{{$group->id}}" class="btn btn-warning btn-sm">Edit</a></td>
-                 <td><a href="/deletegroup/{{$group->id}}" class="btn btn-warning btn-sm" >Delete</a></td>
+                 <td><a href="/deletegroup/{{$group->id}}" class="btn btn-danger btn-sm" >Delete</a></td>
               </tr>
           @endforeach
           

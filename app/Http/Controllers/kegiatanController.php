@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\kegiatan;
+use App\donatur;
 
 class kegiatanController extends Controller
 {
     public function index(){
         $data_kegiatan = kegiatan::all();
-        return view('Kegiatan.index',compact('data_kegiatan'));
+        $data_donatur = donatur::all();
+        return view('Kegiatan.index',compact('data_kegiatan','data_donatur'));
     }
 
     public function create(Request $request){

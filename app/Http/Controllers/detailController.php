@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\detail;
+use App\kegiatan;
+use PDF;
 
 class detailController extends Controller
 {
     public function index(){
         $data_detail = detail::all();
-        return view('Detail.index',compact('data_detail'));
+        $data_kegiatan= kegiatan::all();
+        return view('Detail.index',compact('data_detail','data_kegiatan'));
     }
 
     public function create( Request $request){
@@ -30,8 +33,8 @@ class detailController extends Controller
         $data = detail::find($id);
         $data->jenis_perolehan= $request->input('jenis_perolehan');
         $data->tanggal_perolehan=$request->input('tanggal_perolehan');
-        $data->nilai_ekuivalen=$request->input('nilai_ekuivalen');
-        $data->jumlah_perolehan=$request->input('jumlah_perolehan');
+        $data->dana_ekuivalen=$request->input('dana_ekuivalen');
+        $data->dana_perolehan=$request->input('dana_perolehan');
         $data->save();
         return redirect()->route('indexdetail');
     }
@@ -41,4 +44,11 @@ class detailController extends Controller
         $data->delete();
         return redirect()->back();
     }
+    public function downloadPDF() {
+        $data_detail = detail::all();
+        $data_kegiatan= kegiatan::all();
+        $pdf = PDF::loadView('PDF.detail',compact('data_detail','data_kegiatan'));
+        return $pdf->download('Laporan Detail.pdf');
+    }
+   
 }

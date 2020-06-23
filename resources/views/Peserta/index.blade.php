@@ -1,7 +1,10 @@
 @extends('layouts.layout')
-@section('judul','Data Peserta')
-
 @section('content')
+  <br>
+      <ul class="left">
+        <h1>Data Peserta </h1>
+      </ul>
+    <br>
 <div class="container">
   @if(session('sukses'))
       <div class="alert alert-success" role="alert">
@@ -10,37 +13,43 @@
   @endif
     <div class="row">
         <div class="col-6">
-              
-        </div>
-        <div class="col-6">
              <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
-            Tambah Data
-         </button>
+             <ul class="right">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Tambah Data
+             </button>
+             <a href="{{action('pesertaController@export_peserta')}}" class="btn">Download PDF</a>
+             </ul>
         </div>
         
         <table class="table">
           <tr>
-               <th>ID Peserta</th>
+
                <th>Nama Peserta</th>
                <th>Jenis Kelamin</th>
                <th>No Hp</th>
                <th>Alamat</th>
+               <th>Nama Kegiatan</th>
                <th>Edit</th>
                <th>Delete</th>
+               
           </tr>
           @foreach ($data_peserta as $peserta)
               <tr>
-                  <td>{{$peserta->id}}</td>
                   <td>{{$peserta->nama_peserta}}</td>
                   <td>{{$peserta->jenis_kelamin}}</td>
                   <td>{{$peserta->no_hp}}</td>
                   <td>{{$peserta->alamat_peserta}}</td>
+                  <td>{{$peserta->kegiatan->nama_kegiatan}}</td>
                   <td><a href="/editpeserta/{{$peserta->id}}" class="btn btn-warning btn-sm">Edit</a></td>
-                 <td><a href="/deletepeserta/{{$peserta->id}}" class="btn btn-warning btn-sm" >Delete</a></td>
+                 <td><a href="/deletepeserta/{{$peserta->id}}" class="btn btn-danger btn-sm" >Delete</a></td>
               </tr>
           @endforeach
-          
+          <tr>
+            <td colspan="5"> Jumlah Peserta</td>
+            <td>{{$jumlah_peserta}}</td>
+        </tr>
+        
     </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -73,6 +82,14 @@
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Alamat</label>
             <textarea name="alamat_peserta"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPegawai">Pilih Kegiatan</label>
+            <select name="kegiatan_id" id="exampleInputPegawai">
+              @foreach ($data_kegiatan as $kegiatan)
+                <option value={{$kegiatan->id}}>{{$kegiatan->nama_kegiatan}}</option>
+              @endforeach
+            </select>
           </div>
       </div>
 <div class="modal-footer">
