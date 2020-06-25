@@ -21,6 +21,7 @@ class CreateDonatur extends Migration
             $table->string('afiliasi');
             $table->string('no_rekening')->nullable();
             $table->string('alamat_donatur');
+            $table->integer('group_id');
             $table->timestamps();
         });
     }

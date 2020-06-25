@@ -13,7 +13,5 @@ class peserta extends Model
         return $this->belongsTo('App\kegiatan');
     }
 
-    public function group_peserta(){
-        return $this->belongsTo(group_peserta::class);
-    }
+    
 }

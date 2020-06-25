@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGroupPeserta extends Migration
+class CreateGroup extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateGroupPeserta extends Migration
      */
     public function up()
     {
-        Schema::create('group_peserta', function (Blueprint $table) {
+        Schema::create('group', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_group');
+            $table->string('asal_donatur');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateGroupPeserta extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('group_peserta');
+        Schema::dropIfExists('group');
     }
 }

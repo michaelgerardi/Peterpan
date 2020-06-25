@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class group_peserta extends Model
+class group extends Model
 {
-    protected $table = 'group_peserta';
-    protected $fillable = ['nama_group'];
+    protected $table = 'group';
+    protected $fillable = ['asal_donatur'];
 
     public function peserta(){
-        return $this->hasMany(peserta::class);
+        return $this->hasMany(donatur::class);
     }
 }

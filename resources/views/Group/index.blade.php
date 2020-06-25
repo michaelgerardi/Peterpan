@@ -24,14 +24,14 @@
         <table class="table">
           <tr>
                <th>ID Group</th>
-               <th>Nama Group</th>
+               <th>Asal Donatur</th>
                <th>Edit</th>
                <th>Delete</th>
           </tr>
           @foreach ($data_group as $group)
               <tr>
                   <td>{{$group->id}}</td>
-                  <td>{{$group->nama_group_peserta}}</td>
+                  <td>{{$group->asal_donatur}}</td>
                   <td><a href="/editgroup/{{$group->id}}" class="btn btn-warning btn-sm">Edit</a></td>
                  <td><a href="/deletegroup/{{$group->id}}" class="btn btn-danger btn-sm" >Delete</a></td>
               </tr>
@@ -53,7 +53,7 @@
           {{csrf_field()}}
           <div class="form-group">
             <label for="exampleInputEmail1">Nama Group</label>
-            <input name="nama_group_peserta"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Group Peserta">
+            <input name="asal_donatur"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Group Peserta">
           </div>
       </div>
 <div class="modal-footer">

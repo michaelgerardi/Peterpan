@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\donatur;
+use App\group;
 
 class donaturController extends Controller
 {
     public function index(){
         $data_donatur = donatur::all();
-        return view('Donatur.index',compact('data_donatur'));
+        $data_group = group::all();
+        return view('Donatur.index',compact('data_donatur','data_group'));
     }
 
     public function create(Request $request){

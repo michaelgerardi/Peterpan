@@ -8,7 +8,7 @@
 	<meta name="author" content="Isna Nur Azis">
 	<meta name="keyword" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Miminium</title>
+    <title>Sidoni UPI</title>
  
     <!-- start: Css -->
     <link rel="stylesheet" type="text/css" href="{{asset('asset/css/bootstrap.min.css')}}">
@@ -61,7 +61,7 @@
                   <li class="dropdown avatar-dropdown">
                    <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
-                     <li><a href="/logout"><span class="fa fa-calendar"></span> Logout</a></li>
+                     <li><a href="/logout"><span class="fa fa-power-off"></span> Logout</a></li>
                      <li role="separator" class="divider"></li>
                      {{-- <li class="more">
                       <ul>
@@ -97,7 +97,7 @@
                           <li><a href="/Detail">Data Detail</a></li>
                           <li><a href="/Peserta">Data Peserta</a></li>
                           <li><a href="/Kegiatan">Data Kegiatan</a></li>
-                          <li><a href="/Group">Data Group Peserta</a></li>
+                          <li><a href="/Group">Data Jenis Donatur</a></li>
                           <li><a href="/Donatur">Data Donatur</a></li>
                       </ul>
                     </li>

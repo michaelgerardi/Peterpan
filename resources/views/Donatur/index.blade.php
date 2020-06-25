@@ -30,6 +30,7 @@
                <th>Afiliasi</th>
                <th>No Rekening</th>
                <th>Alamat</th>
+               <th>Jenis Donatur</th>
                <th>Edit</th>
                <th>Delete</th>
           </tr>
@@ -42,6 +43,7 @@
                   <td>{{$donatur->afiliasi}}</td>
                   <td>{{$donatur->no_rekening}}</td>
                   <td>{{$donatur->alamat_donatur}}</td>
+                  <td>{{$donatur->group->asal_donatur}}</td>
                   <td><a href="/editdonatur/{{$donatur->id}}" class="btn btn-warning btn-sm">Edit</a></td>
                  <td><a href="/deletedonatur/{{$donatur->id}}" class="btn btn-danger btn-sm" >Delete</a></td>
               </tr>
@@ -87,6 +89,14 @@
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Alamat</label>
             <textarea name="alamat_donatur"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPegawai">Pilih Kegiatan</label>
+            <select name="group_id" id="exampleInputPegawai">
+              @foreach ($data_group as $group)
+                <option value={{$group->id}}>{{$group->asal_donatur}}</option>
+              @endforeach
+            </select>
           </div>
       </div>
 <div class="modal-footer">
